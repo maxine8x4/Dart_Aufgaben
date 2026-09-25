@@ -1,18 +1,8 @@
-var hello = 'Hallo';
-var welt = 'Welt!';
-var name = 'Jutta Jenssen';
+void main(List<String> arguments) {
+    if (arguments.isNotEmpty) {
+        print ('Hallo ${arguments.join (' ')} !');
 
-
-void main() {
-
-        var hello = 'hello';
-        print (hello);
-
-    if (true) {
-        var welt = 'Welt!';
-        print (welt);
+    } else {
+        print ('"Hallo!"');
     }
-    
 }
-
-
