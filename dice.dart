@@ -7,17 +7,24 @@ int? wuerfe;
 while (wuerfe == null) {
   print ('Wieviele Würfe?');
 String? wuerfeInput = stdin.readLineSync();
-if (wuerfeInput != null) {
+  if (wuerfeInput != null) {
   wuerfe = int.tryParse(wuerfeInput);
-}
+  }
 
-var zahlGenerieren = Random();
+List<int> wuerfeListe = [];
+var rng = Random();
+
 
 for (var i = 0; i < wuerfe!; i++) {
-int number = zahlGenerieren.nextInt(6)+1;
+  int wurf = rng.nextInt(6) +1;
+  wuerfeListe.add(wurf);
 
-print(number);
+  if (wuerfeListe.length >= 2 &&
+  wuerfeListe[wuerfeListe.length -1] == 6 && [wuerfeListe.length -2] == 6) {
+    break;
+  }
 }
+print('Würfe: $wuerfeListe');
 
 }
 
